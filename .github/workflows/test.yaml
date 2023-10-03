@@ -3,7 +3,7 @@ name: Super-Linter
 on:
   push:
     branches:
-      - main # Change this to your main branch
+      - master # Change this to your main branch
 
 jobs:
   lint:
