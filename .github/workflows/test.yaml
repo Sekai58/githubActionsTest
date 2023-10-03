@@ -1,20 +1,27 @@
-name: Super-Linter
+name: Build React App
 
 on:
   push:
     branches:
-      - master # Change this to your main branch
+      - master # Change to the main branch or your default branch
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest  # You can choose a different runner if needed
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Checkout code
-        run: echo "Hello World"
-        shell: bash
+    - name: Checkout code
+      uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18 # Choose the Node.js version you need
 
+    - name: Install dependencies
+      run: npm install  # Replace with the appropriate command for your project (e.g., yarn)
 
-     
+    - name: Build React App
+      run: npm run build  # Replace with the appropriate build command (e.g., yarn build)
+
+    # You can add more steps here as needed, such as testing or deploying the built app
