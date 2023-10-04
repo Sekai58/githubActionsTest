@@ -41,7 +41,7 @@ jobs:
         path: artifacts
 
     - name: Create ZIP Archive
-      run: zip -r my-artifact.zip /home/runner/work/githubActionsTest/githubActionsTest/artifact
+      run: zip -r my-artifact.zip . -i /home/runner/work/githubActionsTest/githubActionsTest/artifact
 
     - name: Upload ZIP Archive
       uses: actions/upload-artifact@v2
