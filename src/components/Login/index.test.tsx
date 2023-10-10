@@ -1,6 +1,6 @@
 // Login.test.tsx
 import { mount } from 'vitest';
-import Login from './Login'; // Import your Login component here
+import Login from './index'; // Import your Login component here
 
 test('should submit the login form', async () => {
   const { getByPlaceholderText, getByText, fixture } = mount(Login);
